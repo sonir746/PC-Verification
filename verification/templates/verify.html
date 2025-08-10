@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Login Alert</title>
+
+<link rel="stylesheet" href="{% static 'verification/style.css' %}">
+    
+</head>
+
+<body>
+    <header>
+        <h1>🖥️💡 PC LOGIN ALERT 💡🖥️</h1>
+        <p>🔐 Welcome! We help you find out <strong>who is using your PC</strong> 👀</p>
+        <p>⚡ Connect with our Telegram bot to get your unique verification code (UID) and secure your system.</p>
+        <div class="cta">
+            <a href="https://t.me/Pc_LoginAlert_bot" target="_blank">🚀 Open Bot & Run /verify</a>
+        </div>
+    </header>
+    <div class="verify-box">
+        <input class="input" type="text" id="usearName" placeholder="👤 Enter your Telegram username (without @)">
+        <input class="input" type="text" id="verificationCode" placeholder="🔑 Enter the verification code from Telegram bot">
+        <br>
+        <button onclick="submitCode()">Get My UID</button>
+        <p id="result"></p>
+    </div>
+    <footer>
+        🛡️ Stay safe. Stay in control. | PC Login Alert &copy; 2025
+    </footer>
+</body>
+<script>
+function submitCode() {
+    const code = document.getElementById('verificationCode').value;
+    const username = document.getElementById('usearName').value;
+
+    fetch('/verify-user/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify({ code: code, username: username })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('result').innerText = data.message;
+    });
+}
+
+// CSRF helper for Django
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+</html>

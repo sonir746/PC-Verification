@@ -1,0 +1,133 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta {
+  margin-top: 30px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #f39c12;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.cta a:hover {
+  background-color: #e67e22;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.verify-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input styles */
+input {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  text-align: center;
+}
+
+/* Placeholder styles for all browsers */
+.verify-box input::placeholder {
+  font-size: 0.8rem; /* noticeably smaller */
+  color: #8d8d8d; /* lighter gray for better contrast */
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+}
+.verify-box input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+}
+.verify-box input::-moz-placeholder {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+}
+.verify-box input:-ms-input-placeholder {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+}
+.verify-box input::-ms-input-placeholder {
+  font-size: 0.8rem;
+  color: #8d8d8d;
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2ecc71;
+}
+
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ffeb3b;
+}
