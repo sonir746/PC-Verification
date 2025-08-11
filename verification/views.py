@@ -4,11 +4,13 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import logging
 from pymongo import MongoClient
-from telegram_bot.Modules import mongo_uri
-
+import os
+# from dotenv import load_dotenv
+# load_dotenv()
 logger = logging.getLogger(__name__)
 
-MONGODB_URI = mongo_uri.get_mongo_uri()
+
+MONGODB_URI = os.getenv("MONGO_URI")
 if not MONGODB_URI:
     raise ValueError("Missing MONGODB_URI in mongo_uri module")
 
