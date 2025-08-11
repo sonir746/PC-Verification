@@ -1,3 +1,4 @@
 Django
 pymongo
 python-dotenv
+gunicorn
